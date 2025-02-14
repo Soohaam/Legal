@@ -1,0 +1,77 @@
+/* LawyerMatchmaking.css */
+.lawyer-matchmaking-container {
+    padding: 40px;
+    background: linear-gradient(135deg, #2f2f2f, #424242);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  label {
+    margin: 20px 0 10px;
+    font-size: 1.2rem;
+  }
+  
+  select {
+    width: 100%; /* Make the select full-width */
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background: #353535;
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 20px; /* Space below the select */
+  }
+  
+  .lawyer-list {
+    margin-top: 20px;
+    max-height: 400px; /* Limit the height of the list */
+    overflow-y: auto; /* Allow vertical scrolling */
+  }
+  
+  .lawyer-list ul {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0; /* Remove padding */
+  }
+  
+  .lawyer-list li {
+    background: #353535;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 10px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s; /* Smooth scaling effect */
+  }
+  
+  .lawyer-list li:hover {
+    transform: scale(1.02); /* Slightly scale up on hover */
+  }
+  
+  .lawyer-list h2 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
+  .lawyer-list p {
+    margin: 5px 0;
+  }
+  
+  a {
+    color: #1db954; /* Change link color */
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  

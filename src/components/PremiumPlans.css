@@ -1,0 +1,98 @@
+.premium-plans {
+    padding: 40px;
+    background: linear-gradient(135deg, #2f2f2f, #424242);
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    color: #ffffff;
+    max-width: 800px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: bold; /* Bold header for emphasis */
+    letter-spacing: 1px; /* Adds a bit of space between letters */
+}
+
+.plans-container {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-between; /* Space between the left and right columns */
+    margin: 30px 0; /* Spacing between the title and plans */
+}
+
+.left-column, .right-column {
+    flex: 1; /* Allow columns to grow equally */
+    padding: 0 20px; /* Add horizontal padding */
+}
+
+.plan {
+    background: #353535; /* Slightly lighter background for better differentiation */
+    border-radius: 12px;
+    padding: 30px; /* Further increased padding */
+    margin: 20px 0; /* Increased margin for better separation */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative; /* Positioning for decorative elements */
+}
+
+.plan::before {
+    content: ""; /* Decorative element */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 8px;
+    width: 60%;
+    background: linear-gradient(135deg, #1db954, #1aa34a);
+    border-radius: 12px 12px 0 0; /* Rounded top corners */
+}
+
+.plan:hover {
+    transform: translateY(-10px); /* Increased lift on hover */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+button {
+    background-color: #1db954; /* Spotify-like green */
+    color: #ffffff;
+    padding: 15px 30px; /* Increased padding for a more substantial button */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem; /* Standardized font size */
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #1aa34a; /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Adding shadow on hover */
+}
+
+.note {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #bdbdbd;
+    line-height: 1.5; /* Improved line spacing for readability */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .premium-plans {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .plan {
+        padding: 20px; /* Adjusted for smaller screens */
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}

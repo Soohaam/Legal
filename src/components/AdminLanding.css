@@ -1,0 +1,58 @@
+/* AdminLanding.css */
+
+/* General Styles */
+.admin-landing-title {
+  color: #3498db; /* Title color matching theme */
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.admin-landing-paper {
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Spacing inside paper */
+  color: hsl(0, 94%, 42%); /* Text color */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Shadow effect */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling */
+}
+
+.admin-landing-paper:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7); /* Enhanced shadow on hover */
+}
+
+.admin-landing-icon {
+  display: flex; /* Center icons */
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 20px; /* Spacing below icons */
+  color: #3498db; /* Icon color matching theme */
+}
+
+.admin-landing-description {
+  margin: 10px 0 20px; /* Spacing above and below */
+  font-size: 1.2rem; /* Font size */
+}
+
+.cta-button {
+  margin-right: 10px; /* Space between buttons */
+  background-color: #3498db; /* Button color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 8px; /* Rounded corners */
+  transition: background-color 0.3s, transform 0.3s; /* Hover effect */
+}
+
+.cta-button:hover {
+  background-color: #2980b9; /* Darker shade on hover */
+  transform: translateY(-2px); /* Lift effect on hover */
+}
+
+.cta-button.outlined {
+  background: transparent; /* Transparent background for outlined buttons */
+  border: 2px solid #3498db; /* Border color */
+  color: #3498db; /* Text color */
+}
+
+.cta-button.outlined:hover {
+  background-color: rgba(52, 152, 219, 0.1); /* Light background on hover */
+}

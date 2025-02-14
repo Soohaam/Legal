@@ -1,0 +1,34 @@
+/* Universal dark theme scrollbar */
+
+/* For WebKit browsers */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    background: #424242; /* Background color of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #616161; /* Color of the scrollbar thumb (the draggable part) */
+    border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #757575; /* Color when hovering over the scrollbar thumb */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #424242; /* Background color of the track (area where the thumb moves) */
+    border-radius: 10px; /* Rounded corners for the track */
+  }
+  
+  /* For Firefox */
+  * {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #616161 #424242; /* Thumb color and track color */
+  }
+  
+  /* Optional: If you want to apply scrollbar styling globally */
+  html {
+    scrollbar-width: thin; /* "auto" or "thin" */
+    scrollbar-color: #616161 #424242; /* Thumb color and track color */
+  }
+  

@@ -1,0 +1,60 @@
+/* AdminLanding.css */
+
+.admin-landing-title {
+  color: #f5f5f5; /* Light text color */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+  margin-bottom: 30px; /* Spacing below title */
+}
+
+.admin-landing-paper {
+  background: rgba(255, 255, 255, 0.1); /* Transparent background */
+  border-radius: 15px; /* Rounded corners */
+  padding: 20px; /* Spacing inside paper */
+  color: #ffffff; /* Text color */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow effect */
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth scaling */
+}
+
+.admin-landing-paper:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5); /* Enhanced shadow on hover */
+}
+
+.admin-landing-icon {
+  display: flex; /* Center icons */
+  justify-content: center; /* Center horizontally */
+  margin-bottom: 20px; /* Spacing below icons */
+  color: #1db954; /* Icon color */
+}
+
+.admin-landing-description {
+  margin: 10px 0 20px; /* Spacing above and below */
+  font-size: 1rem; /* Font size */
+}
+
+.admin-landing-button {
+  margin-right: 10px; /* Space between buttons */
+  font-size: 1rem; /* Button text size */
+}
+
+.admin-landing-button:last-child {
+  margin-right: 0; /* Remove margin for last button */
+}
+
+/* Adjusting button colors */
+.admin-landing-button:first-of-type {
+  background-color: #4caf50; /* Primary button color */
+}
+
+.admin-landing-button:first-of-type:hover {
+  background-color: #45a049; /* Darker on hover */
+}
+
+.admin-landing-button:last-of-type {
+  color: #ffffff; /* Secondary button text color */
+  border: 1px solid #1db954; /* Border color */
+}
+
+.admin-landing-button:last-of-type:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Slight background on hover */
+}

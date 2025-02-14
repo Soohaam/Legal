@@ -1,0 +1,144 @@
+/* Header Container */
+.header-container {
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  z-index: 2;
+  background-color: inherit; /* Matches body color */
+  overflow: hidden;
+}
+
+/* AppBar Styling */
+.MuiAppBar-root {
+  width: 100%; /* Full width */
+  background: linear-gradient(to right, #000000, #2c3e50);
+  color: #ecf0f1;
+  box-shadow: none;
+  height: 80px; /* Increased height */
+  display: flex;
+  align-items: center;
+  padding: 0 20px; /* Add padding for proper spacing */
+}
+
+/* Toolbar Styling */
+.MuiToolbar-root {
+  display: flex;
+  justify-content: space-between; /* Space between title and buttons */
+  padding: 0 10px; /* Adjusted padding */
+  height: 100%; /* Toolbar matches AppBar height */
+  width: 100%;
+  align-items: center;
+}
+
+/* Typography for Legal Mind (left aligned) */
+.MuiTypography-root {
+  font-family: 'Bebas Neue', sans-serif; /* Updated to a thick font style */
+  font-weight: 900; /* Maximum thickness */
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-size: 2rem; /* Increased font size for emphasis */
+  flex-grow: 1; /* Push buttons to the right */
+}
+
+
+/* Advanced Button Styling */
+.MuiButton-root {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900; /* Increased font thickness */
+  text-transform: uppercase;
+  padding: 12px 25px; /* Increased width by adjusting padding */
+  border-radius: 8px; /* More defined corner radius */
+  margin-left: 20px; /* Space between buttons */
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+
+/* Button Unique Hover Effect */
+.MuiButton-root::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) rotate(45deg);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
+.MuiButton-root:hover::before {
+  width: 200%;
+}
+
+.MuiButton-root:hover {
+  background: rgba(255, 255, 255, 0.3); /* Slight increase in opacity */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
+  transform: scale(1.05); /* Scale effect on hover */
+}
+
+/* Unique Button Text Effect */
+.MuiButton-root:hover span {
+  letter-spacing: 2px;
+  transition: letter-spacing 0.3s ease;
+}
+
+/* Floating Circles */
+.floating-circles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 6s ease-in-out infinite;
+}
+
+.circle:nth-child(1) {
+  width: 100px;
+  height: 100px;
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.circle:nth-child(2) {
+  width: 150px;
+  height: 150px;
+  top: 40%;
+  left: 45%;
+  animation-delay: 2s;
+}
+
+.circle:nth-child(3) {
+  width: 200px;
+  height: 200px;
+  top: 70%;
+  left: 75%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,115 @@
+/* General Container Styling */
+.container {
+  padding: 50px;  /* Increased padding for more space */
+  margin-top: 30px;
+  background: linear-gradient(135deg, #e0e0e0, #f4f4f4); /* Softer gradient for a more elegant look */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Slightly larger shadow for depth */
+  transition: background 0.4s ease, box-shadow 0.4s ease; /* Smoother transitions */
+}
+
+/* Header Styling */
+.header {
+  margin-bottom: 40px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 2.8rem; /* Larger font for emphasis */
+  color: #333;
+  letter-spacing: 2px; /* Slight letter spacing for a more polished look */
+  text-transform: uppercase; /* Make the header stand out */
+  border-bottom: 2px solid #0288d1; /* Underline effect */
+  padding-bottom: 10px;
+}
+
+/* Article Card Styling */
+.articleCard {
+  padding: 30px;
+  text-align: center;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffff, #f0f8ff); /* Light gradient for a more modern feel */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Hover effect for Article Cards */
+.articleCard:hover {
+  transform: translateY(-10px); /* More prominent lift effect */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /* Change background slightly on hover */
+}
+
+/* Article Title Styling */
+.articleTitle {
+  margin-bottom: 20px;
+  font-size: 1.45rem;
+  color: #0288d1;
+  transition: color 0.3s ease;
+  font-weight: 600; /* Slightly bolder for better emphasis */
+  text-transform: capitalize;
+}
+
+/* Change title color on hover */
+.articleTitle:hover {
+  color: #01579b;
+}
+
+/* Button Styling */
+.button {
+  background-color: #0288d1;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 30px; /* More rounded buttons */
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.1rem; /* Slightly larger text */
+  font-weight: bold;
+  margin-top: auto;
+  letter-spacing: 1px;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+  background-color: #01579b;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px); /* Slight lift on hover */
+}
+
+/* Button Active State */
+.button:active {
+  transform: translateY(0); /* Remove lift on click */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Smooth transition for card interactions */
+.transition {
+  transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+      padding: 25px;
+  }
+
+  .header {
+      font-size: 2.2rem;
+  }
+
+  .articleCard {
+      padding: 20px;
+  }
+
+  .articleTitle {
+      font-size: 1.3rem;
+  }
+
+  .button {
+      padding: 10px 18px;
+      font-size: 1rem;
+  }
+}
