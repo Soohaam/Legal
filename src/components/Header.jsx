@@ -28,7 +28,7 @@ function Header() {
         <Button component={Link} to="/bot" className="text-white font-semibold uppercase px-4 py-2 rounded-md transition-all duration-300 hover:bg-gray-700 hover:text-blue-400">
           Legal Assistant
         </Button>
-        <Button component={Link} to="/about" className="text-white font-semibold uppercase px-4 py-2 rounded-md transition-all duration-300 hover:bg-gray-700 hover:text-blue-400">
+        <Button component={Link} to="/aboutt" className="text-white font-semibold uppercase px-4 py-2 rounded-md transition-all duration-300 hover:bg-gray-700 hover:text-blue-400">
           About Us
         </Button>
       </div>
