@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import './LawyerMatchmaking.css'; // Create a CSS file for styling
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const lawyers = {
     criminal: [
@@ -221,48 +223,61 @@ function LawyerMatchmaking() {
       setMatchedLawyers([]);
     }
   };
+  const navigate = useNavigate();
+  
 
   return (
-    <div className="lawyer-matchmaking-container">
-  <h1>Lawyer Matchmaking</h1>
-  <label htmlFor="lawyer-field">Select Field of Law:</label>
-  <select id="lawyer-field" value={selectedField} onChange={handleFieldChange}>
-    <option value="">--Select--</option>
-    <option value="criminal">Criminal</option>
-    <option value="family">Family</option>
-    <option value="corporate">Corporate</option>
-    <option value="civil">Civil</option>
-    <option value="intellectualProperty">Intellectual Property</option>
-    <option value="immigration">Immigration</option>
-    <option value="employment">Employment</option>
-    <option value="realEstate">Real Estate</option>
-    <option value="tax">Tax</option>
-    <option value="bankruptcy">Bankruptcy</option>
-    <option value="personalInjury">Personal Injury</option>
-    <option value="environmental">Environmental</option>
-    <option value="healthcare">Healthcare</option>
-    <option value="contract">Contract</option>
-    <option value="litigation">Litigation</option>
-    <option value="elderLaw">Elder Law</option>
-    <option value="sports">Sports</option>
-  </select>
-  <div className="lawyer-list">
-    {matchedLawyers.length > 0 ? (
-      <ul>
-        {matchedLawyers.map((lawyer, index) => (
-          <li key={index}>
-            <h2>{lawyer.name}</h2>
-            <p>Experience: {lawyer.experience}</p>
-            <p>Contact: <a href={`mailto:${lawyer.contact}`}>{lawyer.contact}</a></p>
-          </li>
-        ))}
-      </ul>
-    ) : (
-      <p>Please select a field to see available lawyers.</p>
-    )}
-  </div>
-</div>
-
+    <div className="min-h-screen flex items-center justify-center bg-gray-900 p-6">
+      <button
+      onClick={() => navigate(-1)}
+      className="fixed top-16 left-12 flex items-center px-4 py-2 border-2 border-[#000000] bg-[#2d2f4e] text-white rounded-lg shadow-md hover:bg-[#383861] transition"
+    >
+      <ArrowLeft className="w-5 h-5 mr-2" />
+      Go Back
+    </button>
+      <div className="bg-gray-800 rounded-2xl shadow-2xl p-8 max-w-3xl w-full text-white">
+        <h1 className="text-4xl font-bold mb-8 text-center">Lawyer Matchmaking</h1>
+        <label htmlFor="lawyer-field" className="text-lg block mb-4 text-gray-300">Select Field of Law:</label>
+        <select
+          id="lawyer-field"
+          value={selectedField}
+          onChange={handleFieldChange}
+          className="w-full p-3 rounded-lg border-none bg-gray-700 text-white text-lg mb-6 focus:ring-2 focus:ring-green-500 focus:outline-none transition-all appearance-none"
+        >
+          <option value="">--Select--</option>
+          {["criminal", "family", "corporate", "civil", "intellectualProperty", "immigration", "employment", "realEstate", "tax", "bankruptcy", "personalInjury", "environmental", "healthcare", "contract", "litigation", "elderLaw", "sports"].map((field) => (
+            <option key={field} value={field} className="text-black">{field.replace(/([A-Z])/g, ' $1')}</option>
+          ))}
+        </select>
+  
+        <div className="mt-6 text-left max-h-64 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
+          {matchedLawyers.length > 0 ? (
+            <ul className="space-y-4">
+              {matchedLawyers.map((lawyer, index) => (
+                <li
+                  key={index}
+                  className="bg-gray-700 p-6 rounded-lg shadow-lg hover:bg-gray-600 transition-all duration-300 border-l-4 border-green-500"
+                >
+                  <h2 className="text-xl font-semibold mb-2 text-white">{lawyer.name}</h2>
+                  <p className="text-lg text-gray-200">Experience: {lawyer.experience}</p>
+                  <p className="text-lg text-gray-200">
+                    Contact:{" "}
+                    <a
+                      href={`mailto:${lawyer.contact}`}
+                      className="text-green-400 hover:underline hover:text-green-300 transition-colors duration-200"
+                    >
+                      {lawyer.contact}
+                    </a>
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-lg text-gray-400 text-center">Please select a field to see available lawyers.</p>
+          )}
+        </div>
+      </div>
+    </div>
   );
 }
 

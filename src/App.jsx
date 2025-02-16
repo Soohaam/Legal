@@ -19,11 +19,12 @@ import ArticlesPage from './components/ArticlesPage'; // Import the ArticlesPage
 import PremiumPlans from './components/PremiumPlans';
 import CaseReview from './components/CaseReview';
 import LawyerMatchmaking from './components/LawyerMatchmaking';
+import LegalChatbot from './components/LegalChatbot';
 
 function App() {
   return (
     <Router>
-      <Header />
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
@@ -40,8 +41,9 @@ function App() {
         <Route path="/premium-plans" element={<PremiumPlans />} /> {/* Corrected this line */}
         <Route path="/case-review" element={<CaseReview />} />
         <Route path="/lawyer" element={<LawyerMatchmaking />} />
+        <Route path="/bot" element={<LegalChatbot />} />
       </Routes>
-      <Footer />
+      
     </Router>
   );
 }
