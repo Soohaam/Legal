@@ -214,37 +214,52 @@ function Homepage() {
     </motion.div>
   </div>
 </div>
-     {/* Why Choose Us Section */}
+    {/* Why Choose Us Section - Dark Theme */}
 <motion.div
   className="choose-us-section"
   initial="hidden"
   whileInView="visible"
   variants={staggerContainer}
   viewport={{ once: true, amount: 0.5 }}
-  style={{ padding: '4rem 2rem', textAlign: 'center' }}
+  style={{ 
+    padding: '3rem 1.5rem', 
+    textAlign: 'center', 
+    backgroundColor: '#1A1A1A', // Dark background
+    color: '#FFFFFF', // Light text for contrast
+  }}
 >
   <div className="choose-us-content" style={{ maxWidth: '1200px', margin: '0 auto' }}>
     <motion.div variants={fadeInUp}>
-      <Typography variant="h4" className="choose-us-title" gutterBottom style={{ 
-        fontWeight: '900', // Extra bold
-        color: '#0b5ae3', // Bright blue
-        fontSize: '2.5rem', // Larger font size
-        textTransform: 'uppercase', // Uppercase for emphasis
-      }}>
+      <Typography 
+        variant="h4" 
+        className="choose-us-title" 
+        gutterBottom 
+        style={{ 
+          fontWeight: '900', // Extra bold
+          color: '#0b5ae3', // Bright blue
+          fontSize: '2rem', // Slightly smaller for mobile
+          textTransform: 'uppercase', // Uppercase for emphasis
+          marginBottom: '1.5rem', // Added spacing
+        }}
+      >
         Why Choose Us?
       </Typography>
     </motion.div>
     <motion.div variants={fadeInUp}>
-      <Typography variant="body1" className="choose-us-text" style={{ 
-        color: '#2E3A59', // Darker text for contrast
-        lineHeight: '1.8',
-        fontSize: '1.25rem', // Slightly larger body text
-        fontWeight: '500', // Medium bold
-      }}>
-        We provide <strong style={{ color: '#007FFF' }}>expert legal guidance</strong> tailored to your needs. Our <strong style={{ color: '#007FFF' }}>AI-driven analysis</strong> leverages the latest technology to deliver precise recommendations.
-        <br /><br />
-        Enjoy <strong style={{ color: '#007FFF' }}>24/7 support</strong> and have access to seasoned professionals like <strong style={{ color: '#007FFF' }}>Sujal Shah</strong> and <strong style={{ color: '#007FFF' }}>Soham Bhaye</strong>. Our commitment to excellence and customer satisfaction sets us apart.
-      </Typography>
+    <Typography 
+  variant="body1" 
+  className="choose-us-text" 
+  style={{ 
+    color: '#E0E0E0', // Light gray for readability
+    lineHeight: '1.8',
+    fontSize: '1rem', // Mobile-friendly font size
+    fontWeight: '400', // Regular weight for body text
+  }}
+>
+  We provide <strong style={{ color: '#007FFF' }}>expert legal guidance</strong> tailored to your needs. Our <strong style={{ color: '#007FFF' }}>AI-driven analysis</strong> leverages the latest technology to deliver precise recommendations.
+  <br /><br />
+  Enjoy <strong style={{ color: '#007FFF' }}>24/7 support</strong> and have access to our team of seasoned professionals. Our commitment to excellence and customer satisfaction sets us apart.
+</Typography>
     </motion.div>
   </div>
 </motion.div>
