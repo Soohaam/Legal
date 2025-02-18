@@ -32,6 +32,7 @@ function Homepage() {
     { name: 'Home', path: '/' },
     { name: 'Features', path: '/user-landing' },
     { name: 'Legal Assistant', path: '/bot' },
+    { name: 'Lawyer Login', path: '/login' },
   ];
   
   const testimonials = [
@@ -299,7 +300,13 @@ function Homepage() {
       style={{ listStyle: 'none', padding: 0, display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '1.5rem' }}
       variants={staggerContainer}
     >
-      {['Legal Consultation', 'Contract Review and Drafting', 'Litigation Support', 'Intellectual Property Protection', 'Corporate Law Advisory'].map((service, index) => (
+      {[
+        { name: 'Legal Consultation', route: '/lawyer' },
+        { name: 'AI Legal Assistant', route: '/bot' },
+        { name: 'Contract Review and Drafting', route: '/case-review' },
+        { name: 'Corporate Law Advisory', route: '/lawyer' },
+        { name: 'Litigation Support', route: '/lawyer' },
+      ].map((service, index) => (
         <motion.li
           key={index}
           variants={fadeInUp}
@@ -310,20 +317,22 @@ function Homepage() {
             boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
             width: '280px',
             textAlign: 'left',
+            cursor: 'pointer', // Add pointer cursor
           }}
         >
-          <Typography variant="body1" style={{ 
-            color: '#2E3A59', // Darker text for contrast
-            fontWeight: '600', // Semi-bold
-          }}>
-            {service}
-          </Typography>
+          <Link to={service.route} style={{ textDecoration: 'none', color: 'inherit' }}>
+            <Typography variant="body1" style={{ 
+              color: '#2E3A59', // Darker text for contrast
+              fontWeight: '600', // Semi-bold
+            }}>
+              {service.name}
+            </Typography>
+          </Link>
         </motion.li>
       ))}
     </motion.ul>
   </div>
 </motion.div>
-
 
      
       {/* Contact Section */}

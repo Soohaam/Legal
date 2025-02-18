@@ -21,6 +21,7 @@ import CaseReview from './components/CaseReview';
 import LawyerMatchmaking from './components/LawyerMatchmaking';
 import LegalChatbot from './components/LegalChatbot';
 import AboutUs from './components/AboutUs';
+import Un from './components/Un';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
         <Route path="/lawyer" element={<LawyerMatchmaking />} />
         <Route path="/bot" element={<LegalChatbot />} />
         <Route path="/about" element={<AboutUs />} />
+        <Route path="/un" element={<Un />} />
       </Routes>
       
     </Router>

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './LawyerMatchmaking.css'; // Create a CSS file for styling
 import { ArrowLeft } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import Header from './Header';
 
 const lawyers = {
     criminal: [

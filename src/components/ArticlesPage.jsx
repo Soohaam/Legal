@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { Container, Grid, Paper, Typography, Button } from '@mui/material';
 import './ArticlesPage.css'; // Import the CSS file
 
@@ -27,6 +30,7 @@ const articlesData = [
 
 const ArticlesPage = () => {
   const [clickedIndex, setClickedIndex] = useState(null);
+  const navigate = useNavigate();
 
   const handleCardClick = (index) => {
     setClickedIndex(index);
@@ -36,62 +40,88 @@ const ArticlesPage = () => {
   };
 
   return (
-    <Container maxWidth="lg" style={styles.container}>
-      <Typography variant="h4" gutterBottom style={styles.header}>
-        Articles
-      </Typography>
-      <Grid container spacing={4}>
-        {articlesData.map((article, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <Paper
-              elevation={3}
-              style={{
-                ...styles.articleCard,
-                ...(clickedIndex === index && styles.clickedCard),
-              }}
-              onClick={() => handleCardClick(index)}
-            >
-              <Typography variant="h6" style={styles.articleTitle}>
-                {article.title}
-              </Typography>
-              <Button
-                variant="contained"
-                style={styles.button}
-                onClick={(e) => {
-                  e.stopPropagation();
-                  window.open(article.link, '_blank');
-                }}
+    <div className="min-h-screen bg-gray-900 py-16 px-4 sm:px-6 lg:px-8">
+      <button
+        onClick={() => navigate(-1)}
+        className="fixed top-16 left-12 flex items-center px-4 py-2 border-2 border-[#000000] bg-[#2d2f4e] text-white rounded-lg shadow-md hover:bg-[#383861] transition"
+      >
+        <ArrowLeft className="w-5 h-5 mr-2" />
+        Go Back
+      </button>
+      <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+        className="max-w-4xl mx-auto text-center"
+      >
+        <h2 className="text-4xl font-bold text-blue-500 mb-4">
+          Articles
+        </h2>
+        <p className="text-lg text-gray-400 mb-12">
+          Explore the latest articles on AI and the legal landscape.
+        </p>
+      </motion.div>
+
+      <Container maxWidth="lg" style={styles.container}>
+        <Grid container spacing={4}>
+          {articlesData.map((article, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                Read More
-              </Button>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+                <Paper
+                  elevation={3}
+                  style={{
+                    ...styles.articleCard,
+                    ...(clickedIndex === index && styles.clickedCard),
+                  }}
+                  onClick={() => handleCardClick(index)}
+                >
+                  <Typography variant="h6" style={styles.articleTitle}>
+                    {article.title}
+                  </Typography>
+                  <Button
+                    variant="contained"
+                    style={styles.button}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      window.open(article.link, '_blank');
+                    }}
+                  >
+                    Read More
+                  </Button>
+                </Paper>
+              </motion.div>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </div>
   );
 };
 
 const styles = {
   container: {
-    padding: '50px 30px', // Increased top/bottom padding for more spacious layout
+    padding: '50px 30px',
     marginTop: '40px',
     background: '#424242',
-    borderRadius: '20px', // Increased radius for a smoother look
-    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)', // Slightly stronger shadow
+    borderRadius: '20px',
+    boxShadow: '0 8px 20px rgba(0, 0, 0, 0.15)',
     transition: 'background 0.3s ease',
-    maxWidth: '1200px', // Adjusted max-width for a slightly narrower look
+    maxWidth: '1200px',
     margin: '40px auto',
   },
   header: {
-    marginBottom: '40px', // Increased margin for better spacing below the header
+    marginBottom: '40px',
     fontWeight: 'bold',
     textAlign: 'center',
-    fontSize: '2.8rem', // Slightly larger font for a more prominent header
+    fontSize: '2.8rem',
     color: '#ffffff',
     lineHeight: '1.3',
     '@media (max-width: 768px)': {
-      fontSize: '2.2rem', // Adjusted font size for smaller screens
+      fontSize: '2.2rem',
     },
   },
   articleCard: {
@@ -102,8 +132,8 @@ const styles = {
     boxShadow: '0 6px 12px rgba(0, 0, 0, 0.1)',
     cursor: 'pointer',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    width: '99%', // Adjusted width for the card
-    margin: '0 auto', // Center the card
+    width: '99%',
+    margin: '0 auto',
     '&:hover': {
       animation: 'wobble 0.6s ease-in-out',
       boxShadow: '0 8px 20px rgba(0, 0, 0, 0.2)',
@@ -111,38 +141,38 @@ const styles = {
     },
     '@media (max-width: 768px)': {
       padding: '25px',
-      width: '100%', // Ensure full width on smaller screens
+      width: '100%',
     },
   },
   clickedCard: {
-    transform: 'scale(0.97)', // Subtle scale effect on click
-    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.25)', // Stronger shadow on click
+    transform: 'scale(0.97)',
+    boxShadow: '0 8px 25px rgba(0, 0, 0, 0.25)',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
   },
   articleTitle: {
-    marginBottom: '20px', // More spacing between the title and button
-    fontSize: '1.4rem', // Slightly larger title text
+    marginBottom: '20px',
+    fontSize: '1.4rem',
     color: '#e0e0e0',
     transition: 'transform 0.3s ease, color 0.3s ease',
-    animation: 'motion 2s infinite', // Keep the motion effect
+    animation: 'motion 2s infinite',
     '@media (max-width: 768px)': {
-      fontSize: '1.3rem', // Adjusted font size for mobile
+      fontSize: '1.3rem',
     },
   },
   button: {
     backgroundColor: '#0288d1',
     color: '#ffffff',
-    padding: '12px 24px', // Larger padding for a more comfortable button size
-    borderRadius: '30px', // More rounded corners
+    padding: '12px 24px',
+    borderRadius: '30px',
     transition: 'all 0.3s ease',
     fontWeight: 'bold',
-    fontSize: '1rem', // Slightly larger button text
+    fontSize: '1rem',
     '&:hover': {
       backgroundColor: '#01579b',
-      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)', // Subtle hover shadow
+      boxShadow: '0 6px 12px rgba(0, 0, 0, 0.15)',
     },
     '@media (max-width: 768px)': {
-      padding: '10px 18px', // Adjusted padding for mobile
+      padding: '10px 18px',
       fontSize: '0.9rem',
     },
   },
@@ -161,6 +191,5 @@ const styles = {
     '100%': { transform: 'translateX(0)' },
   },
 };
-
 
 export default ArticlesPage;
