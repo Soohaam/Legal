@@ -157,7 +157,7 @@ const features = [
   { title: 'Legal FAQ', Icon: HelpOutline, desc: 'Get answers to frequently asked legal questions.', url: '/faq' },
   { title: 'Lawyer Matchmaking', Icon: People, desc: 'Find the right lawyer for your needs.', url: '/lawyer' },
   { title: 'Blog / Legal Insights', Icon: Article, desc: 'Stay updated with recent legal trends.', url: '/Articles' },
-  { title: 'Document Generator', Icon: Description, desc: 'Create legal documents with AI assistance.', url: '/premium-plans' },
+  { title: 'Document Generator', Icon: Description, desc: 'Create legal documents with AI assistance.', url: '/un' },
   { title: 'Pricing Plans', Icon: PriceCheck, desc: 'View pricing for consultations and services.', url: '/premium-plans' },
 ];
 
