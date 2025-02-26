@@ -154,11 +154,12 @@ function UserLanding() {
 // Update the features array to remove the chatbot since it's handled separately
 const features = [
   { title: 'Case Review Upload', Icon: UploadFile, desc: 'Upload documents for preliminary AI review.', url: '/case-review' },
-  { title: 'Legal FAQ', Icon: HelpOutline, desc: 'Get answers to frequently asked legal questions.', url: '/faq' },
+  { title: 'Know Your Rights Quiz', Icon: Article, desc: 'Learn basic Indian laws and earn coins with simple questions.', url: '/quiz' },
   { title: 'Lawyer Matchmaking', Icon: People, desc: 'Find the right lawyer for your needs.', url: '/lawyer' },
+  { title: 'Legal FAQ', Icon: HelpOutline, desc: 'Get answers to frequently asked legal questions.', url: '/faq' },
   { title: 'Blog / Legal Insights', Icon: Article, desc: 'Stay updated with recent legal trends.', url: '/Articles' },
   { title: 'Document Generator', Icon: Description, desc: 'Create legal documents with AI assistance.', url: '/un' },
-  { title: 'Pricing Plans', Icon: PriceCheck, desc: 'View pricing for consultations and services.', url: '/premium-plans' },
+  // { title: 'Pricing Plans', Icon: PriceCheck, desc: 'View pricing for consultations and services.', url: '/premium-plans' },
 ];
 
 export default UserLanding;
