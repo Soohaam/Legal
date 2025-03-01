@@ -13,7 +13,7 @@ export default function LegalChatbot() {
     const navigate = useNavigate();
 
   const API_KEY = import.meta.env.VITE_GEMINI_API_KEY;
-  const API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
+  const API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-pro:generateContent";
 
   // Legal advisor prompt template
   const getLegalPrompt = (userQuestion) => `
