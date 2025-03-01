@@ -115,6 +115,13 @@ const QuizComponent = () => {
   if (showResult) {
     return (
       <div className="min-h-screen bg-gray-900 py-16 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+        <button
+          onClick={() => navigate(-1)}
+          className="fixed top-16 left-12 flex items-center px-4 py-2 border-2 border-[#000000] bg-[#2d2f4e] text-white rounded-lg shadow-md hover:bg-[#383861] transition"
+        >
+          <ArrowLeft className="w-5 h-5 mr-2" />
+          Go Back
+        </button>
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -138,6 +145,13 @@ const QuizComponent = () => {
             >
               Play Again
             </button>
+            {/* New message section */}
+            <div className="mt-6 p-4 bg-gray-700 rounded-lg">
+              <p className="text-gray-200 text-sm">
+                🎉 Come back tomorrow for a brand new quiz challenge! 
+                Log in daily to test your knowledge and earn more coins.
+              </p>
+            </div>
           </div>
         </motion.div>
       </div>

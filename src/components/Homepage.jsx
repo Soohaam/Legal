@@ -29,7 +29,7 @@ function Homepage() {
   };
 
   const navItems = [
-    { name: 'Home', path: '/' },
+    { name: 'Quiz', path: '/quiz' },
     { name: 'Features', path: '/user-landing' },
     { name: 'Legal Assistant', path: '/bot' },
     { name: 'Lawyer Login', path: '/login' },
